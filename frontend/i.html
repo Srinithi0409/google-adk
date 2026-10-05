@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Data Source - Auto Analyst</title>
+    <link rel="stylesheet" href="s.css" />
+  </head>
+
+  <body>
+    <div class="topbar">Auto Analyst — Data Source</div>
+
+    <div class="container">
+      <!-- LEFT SIDEBAR -->
+      <div class="sidebar">
+        <h3 style="margin-top: 10px">Connections</h3>
+        <div class="conn-box" id="fileNameBox">No File Loaded</div>
+
+        <h3 style="margin-top: 25px">Fields</h3>
+
+        <table id="fieldsTable" class="fields-table">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Column Name</th>
+            </tr>
+          </thead>
+          <tbody id="fieldsTableBody"></tbody>
+        </table>
+      </div>
+
+      <!-- MAIN CONTENT -->
+      <div class="main">
+        <div class="header-area">
+          <h2 id="sheetTitle">Sheet1</h2>
+
+          <!-- Row Controls -->
+          <div class="row-controls">
+            <select id="rowLimit">
+              <option value="100" selected>100</option>
+              <option value="500">500</option>
+              <option value="1000">1000</option>
+              <option value="all">All</option>
+            </select>
+            <span>rows</span>
+            <button id="nextRowsBtn">→</button>
+          </div>
+        </div>
+
+        <label class="ai-box">
+          <input type="checkbox" id="aiCheck" /> Run AI Cleaning Assistant
+        </label>
+
+        <div id="aiOptions" style="display: none">
+          <select id="techniqueDropdown"></select>
+          <button id="applyAI">Apply</button>
+        </div>
+
+        <!-- DATA TABLE -->
+        <div class="table-area">
+          <table id="dataTable"></table>
+        </div>
+      </div>
+    </div>
+
+    <script src="j.js"></script>
+  </body>
+</html>

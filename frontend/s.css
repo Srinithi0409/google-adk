@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f7f8fa;
+}
+
+/* TOP BAR */
+.topbar {
+    background: #ecf2fb;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #253858;
+    border-bottom: 1.5px solid #dce2ec;
+}
+
+/* PAGE LAYOUT */
+.container {
+    display: flex;
+    height: calc(100vh - 52px);
+}
+
+/* LEFT SIDEBAR */
+.sidebar {
+    width: 260px;
+    background: #ffffff;
+    border-right: 1.5px solid #e2e6ef;
+    padding: 20px;
+}
+
+.sidebar h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #253858;
+    margin: 20px 0 10px 0;
+}
+
+.conn-box {
+    padding: 10px;
+    background: #f5f6fa;
+    border: 1px solid #d9dce4;
+    border-radius: 5px;
+    font-size: 0.95rem;
+}
+
+/* FIELDS TABLE */
+.fields-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.fields-table th,
+.fields-table td {
+    padding: 6px 8px;
+    border-bottom: 1px solid #e4e7ef;
+}
+
+.fields-table th {
+    background: #f5f7fb;
+    font-weight: 600;
+}
+
+.field-type-cell {
+    width: 40px;
+    text-align: center;
+    font-weight: bold;
+    opacity: 0.8;
+}
+
+/* MAIN CONTENT */
+.main {
+    flex: 1;
+    padding: 20px;
+}
+
+.header-area h2 {
+    margin: 0 0 12px 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+/* ROW CONTROLS */
+.row-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+#rowLimit {
+    padding: 4px 8px;
+}
+
+#nextRowsBtn {
+    padding: 4px 10px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background: white;
+}
+
+/* TABLE AREA */
+.table-area {
+    background: white;
+    border: 1px solid #d8dce4;
+    border-radius: 6px;
+    overflow: auto;
+    height: 80vh;
+}
+
+/* DATA TABLE */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #eceff4;
+}
+
+th {
+    background: #f0f3fa;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+}

@@ -1,0 +1,103 @@
+📊 DATA SUMMARY
+------------------------------------------------------------
+
+🔹 Shape: (3022, 17)
+
+🔹 Column Types:
+Vehicle_ID                  int64
+Manufacturer               object
+Model                      object
+Year                        int64
+Battery_Type               object
+Battery_Capacity_kWh      float64
+Range_km                    int64
+Charging_Type              object
+Charge_Time_hr            float64
+Price_USD                 float64
+Color                      object
+Country_of_Manufacture     object
+Autonomous_Level          float64
+CO2_Emissions_g_per_km    float64
+Safety_Rating             float64
+Units_Sold_2024             int64
+Warranty_Years              int64
+dtype: object
+
+🔹 Missing Values:
+Vehicle_ID                  0
+Manufacturer                0
+Model                       0
+Year                        0
+Battery_Type                0
+Battery_Capacity_kWh        0
+Range_km                    0
+Charging_Type               0
+Charge_Time_hr              0
+Price_USD                   0
+Color                       0
+Country_of_Manufacture      0
+Autonomous_Level          442
+CO2_Emissions_g_per_km    592
+Safety_Rating             337
+Units_Sold_2024             0
+Warranty_Years              0
+dtype: int64
+
+🔹 Sample Rows:
+   Vehicle_ID Manufacturer                 Model  Year  ... CO2_Emissions_g_per_km  Safety_Rating  Units_Sold_2024 Warranty_Years
+0           1        Acura  ZDX (with GM Ultium)  2015  ...                    NaN            5.0            19726              3
+1           2  Lamborghini       Revuelto (PHEV)  2025  ...                    0.0            4.0             3349              3
+2           3          NIO                   ET7  2020  ...                    0.0            5.0             6300              5
+3           4         Audi                e-tron  2025  ...                    0.0            5.0             2339              5
+4           5        Acura  ZDX (with GM Ultium)  2023  ...                    0.0            3.0             1051              4
+
+[5 rows x 17 columns]
+
+
+🧹 STARTING AUTOMATIC CLEANING...
+
+✔ Removed 0 duplicate rows
+✔ Removed fully empty rows
+D:\projects\adk\multi_tool_agent\auto_cleaner.py:52: FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+  df = df.applymap(lambda x: x.strip() if isinstance(x, str) else x)
+✔ Trimmed spacing in data
+D:\projects\adk\multi_tool_agent\auto_cleaner.py:57: FutureWarning: errors='ignore' is deprecated and will raise in a future version. Use to_numeric without passing `errors` and catch exceptions explicitly instead
+  df[col] = pd.to_numeric(df[col], errors="ignore")
+✔ Converted numeric columns where possible
+D:\projects\adk\multi_tool_agent\auto_cleaner.py:66: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+  df[col].fillna(mean_value, inplace=True)
+✔ Filled missing numeric values in 'Vehicle_ID' with mean
+D:\projects\adk\multi_tool_agent\auto_cleaner.py:71: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+  df[col].fillna(mode_value, inplace=True)
+✔ Filled missing categorical values in 'Manufacturer' with mode
+✔ Filled missing categorical values in 'Model' with mode
+✔ Filled missing numeric values in 'Year' with mean
+✔ Filled missing categorical values in 'Battery_Type' with mode
+✔ Filled missing numeric values in 'Battery_Capacity_kWh' with mean
+✔ Filled missing numeric values in 'Range_km' with mean
+✔ Filled missing categorical values in 'Charging_Type' with mode
+✔ Filled missing numeric values in 'Charge_Time_hr' with mean
+✔ Filled missing numeric values in 'Price_USD' with mean
+✔ Filled missing categorical values in 'Color' with mode
+✔ Filled missing categorical values in 'Country_of_Manufacture' with mode
+✔ Filled missing numeric values in 'Autonomous_Level' with mean
+✔ Filled missing numeric values in 'CO2_Emissions_g_per_km' with mean
+✔ Filled missing numeric values in 'Safety_Rating' with mean
+✔ Filled missing numeric values in 'Units_Sold_2024' with mean
+✔ Filled missing numeric values in 'Warranty_Years' with mean
+
+🎉 Cleaning completed!
+
+
+
+uvicorn app:app --host 127.0.0.1 --port 5000 --reload
